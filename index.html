@@ -1,0 +1,17 @@
+<BODY>
+    <article id="game" />
+
+    <script>
+        fetch('https://sara-kobo.microcms.io/api/v1/game',
+            { headers: { "X-MICROCMS-API-KEY": "320240f08b2e4396b0d4a97de7caf9a8ece4" } })
+            .then((res) => {
+                return res.json();
+            })
+            .then((json) => {
+                document.getElementById("game").innerHTML = json.body;
+            })
+            .catch((reason) => {
+                console.log(reason);
+            });
+    </script>
+</BODY>
